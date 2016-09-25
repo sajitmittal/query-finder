@@ -1,0 +1,44 @@
+Result for test with 100000 queries (done via jmeter, since apache bench does not support this)
+Number of threads: 10
+Number of iterations: 10000
+
+Error%      0%
+Throughput  69.3/sec
+
+A reason for getting low throughput will also be due to the fact that each url was read from a file which added latency.
+Detailed description of the test is present in multi_table.csv file.
+
+
+Result for test with single query 100000 times using Apache bench
+Document Path:          /kredex/Home?query=dog,process,new,food,can
+Document Length:        15667 bytes
+
+Concurrency Level:      10
+Time taken for tests:   412.800 seconds
+Complete requests:      100000
+Failed requests:        0
+Total transferred:      1573200000 bytes
+HTML transferred:       1566700000 bytes
+Requests per second:    242.25 [#/sec] (mean)
+Time per request:       41.280 [ms] (mean)
+Time per request:       4.128 [ms] (mean, across all concurrent requests)
+Transfer rate:          3721.73 [Kbytes/sec] received
+
+Connection Times (ms)
+              min  mean[+/-sd] median   max
+Connect:        0    3   2.3      3     131
+Processing:     4   38  14.0     34     343
+Waiting:        2   22  11.4     20     274
+Total:          6   41  15.3     37     358
+
+Percentage of the requests served within a certain time (ms)
+  50%     37
+  66%     39
+  75%     42
+  80%     45
+  90%     54
+  95%     67
+  98%     87
+  99%    103
+ 100%    358 (longest request)
+
